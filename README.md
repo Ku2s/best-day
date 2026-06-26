@@ -44,13 +44,23 @@ prévisions journalières) est réalisé **à l'intérieur de la chaîne métier
 - Maven
 - API REST distante : Open-Meteo (géocodage + prévisions journalières)
 
+## Front-end (bonus)
+
+Une page statique (`src/main/resources/static/index.html`) servie par Spring Boot offre un
+formulaire (ville + activité) et affiche le meilleur jour et le classement des 7 jours. Elle
+appelle l'API REST en `fetch` sur la même origine. Une fois l'application lancée, ouvrir :
+
+```
+http://localhost:8080/
+```
+
 ## Lancer le projet
 
 ```bash
 mvn spring-boot:run
 ```
 
-Puis :
+Puis ouvrir <http://localhost:8080/> dans un navigateur, ou appeler l'API directement :
 
 ```bash
 curl "http://localhost:8080/api/best-day?city=Paris&activity=running"
